@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Proyecto</string>
+    <string name="titulo">Registro: RappiCoop</string>
+    <string name="titulo_L">RappiCoop</string>
+    <string name="nombre">Nombre Completo</string>
+    <string name="user">Nombre de usuario</string>
+    <string name="correo">Correo</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="aceptar">Registrar</string>
+    <string name="cancelar">Ya Registrado</string>
+    <string name="titulo2">Registrado</string>
+    <string name="ok">OK</string>
+    <string name="confirmacion">Confirma Contraseña</string>
+</resources>
