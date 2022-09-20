@@ -2,6 +2,7 @@ package com.unipiloto.proyecto;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -50,6 +51,24 @@ public class DataBaseSingUp extends SQLiteOpenHelper{
         long res = db.insert(TABLE_NAME, null, content);
 
         if (res == -1)
+            return false;
+        else
+            return true;
+    }
+
+    public boolean checkUser(String email){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COL_3 + " = ?", new String[] {email});
+        if (cursor.getCount() > 0)
+            return false;
+        else
+            return true;
+    }
+
+    public boolean checkPass(String password){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COL_4 + " = ?", new String[] {password});
+        if (cursor.getCount() > 0)
             return false;
         else
             return true;

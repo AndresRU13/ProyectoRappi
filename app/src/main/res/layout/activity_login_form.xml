@@ -18,6 +18,7 @@
         />
 
     <EditText
+        android:id="@+id/logCorreo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="E-mail"
@@ -28,6 +29,7 @@
         />
 
     <EditText
+        android:id="@+id/logContraseña"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Contraseña"
@@ -55,5 +57,4 @@
         android:layout_marginTop="10dp"
         android:onClick="Registrase"
         />
-
 </LinearLayout>

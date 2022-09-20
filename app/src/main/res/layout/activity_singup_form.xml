@@ -18,16 +18,8 @@
         android:layout_centerHorizontal="true"
         />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editFullNombre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        >
-
         <EditText
-
+            android:id="@+id/editFullNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -35,58 +27,33 @@
             android:hint="@string/nombre"
             android:inputType="text"
             />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editCorreo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        >
 
         <EditText
+            android:id="@+id/editCorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:hint="@string/correo"
             />
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editContraseña"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        >
 
         <EditText
+            android:id="@+id/editContraseña"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:hint="@string/contraseña"
             android:inputType="textPassword"
             />
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editConfirmacionContraseña"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        >
 
         <EditText
+            android:id="@+id/editConfirmacionContraseña"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:hint="@string/confirmacion"
             android:inputType="textPassword"
             />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <RadioGroup
         android:id="@+id/selectGenero"

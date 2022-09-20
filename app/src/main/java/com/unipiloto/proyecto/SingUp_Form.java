@@ -15,9 +15,8 @@ import com.google.android.material.textfield.TextInputLayout;
 public class SingUp_Form extends AppCompatActivity {
 
     DataBaseSingUp myDB;
-    TextInputLayout editName, editEmail, editPassword;
+    EditText editName, editEmail, editPassword, editRepass;
     int selectGender, selectRol;
-    Button singUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,38 +24,66 @@ public class SingUp_Form extends AppCompatActivity {
         setContentView(R.layout.activity_singup_form);
          myDB = new DataBaseSingUp(this);
 
-         editName = (TextInputLayout) findViewById(R.id.editFullNombre);
-        editEmail = (TextInputLayout) findViewById(R.id.editCorreo);
-        editPassword = (TextInputLayout) findViewById(R.id.editContraseña);
-        //selectGender = (RadioButton) findViewById(R.id.radioMale);
-        //selectRol = (RadioButton) findViewById(R.id.radioClient);
-
-        singUp = (Button) findViewById(R.id.btnAceptar);
+         editName = (EditText) findViewById(R.id.editFullNombre);
+        editEmail = (EditText) findViewById(R.id.editCorreo);
+        editPassword = (EditText) findViewById(R.id.editContraseña);
+        editRepass = (EditText) findViewById(R.id.editConfirmacionContraseña);
     }
+
 
     public void Registrar(View view) {
         Integer valueGender = new Integer(selectGender);
         Integer valueRol = new Integer(selectRol);
 
-        Usuario user = new Usuario();
+        if (validar() == true) {
+            if (validarC() == true) {
+                Usuario user = new Usuario();
 
-        user.setNombre(editName.getEditText().toString());
-        user.setEmail(editEmail.getEditText().toString());
-        user.setPassword(editPassword.getEditText().toString());
-        user.setGenero(valueGender);
-        user.setRol(valueRol);
+                user.setNombre(editName.getText().toString());
+                user.setEmail(editEmail.getText().toString());
+                user.setPassword(editPassword.getText().toString());
+                user.setGenero(valueGender);
+                user.setRol(valueRol);
 
-        boolean isInserted = myDB.insertData(user);
-
-        if (isInserted)
-            Toast.makeText(SingUp_Form.this, "Datos Insertados", Toast.LENGTH_LONG).show();
-        else
-            Toast.makeText(SingUp_Form.this, "Datos NO Insertados", Toast.LENGTH_LONG).show();
+                boolean check = myDB.checkUser(editEmail.getText().toString());
+                if (check == false) {
+                    boolean isInserted = myDB.insertData(user);
+                    if (isInserted)
+                        Toast.makeText(SingUp_Form.this, "Datos Registrados con EXITO", Toast.LENGTH_LONG).show();
+                    else
+                        Toast.makeText(SingUp_Form.this, "Datos NO registrados", Toast.LENGTH_LONG).show();
+                }else
+                    Toast.makeText(SingUp_Form.this, "El Correo YA existe", Toast.LENGTH_LONG).show();
+            }else
+                Toast.makeText(SingUp_Form.this, "Los campos de la CONTRASEÑA NO coinciden", Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(SingUp_Form.this, "Faltan completar alguno campos", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void Regresar(View view) {
         Intent i = new Intent(SingUp_Form.this, Login_Form.class);
         startActivity(i);
+    }
+
+    public boolean validar(){
+        String name = editName.getText().toString();
+        String email = editEmail.getText().toString();
+        String pass = editPassword.getText().toString();
+        String repass = editRepass.getText().toString();
+        if (name.isEmpty() || email.isEmpty() || pass.isEmpty() || repass.isEmpty())
+            return false;
+        else
+            return true;
+    }
+
+    public boolean validarC(){
+        String pass = editPassword.getText().toString();
+        String repass = editRepass.getText().toString();
+        if (pass.equals(repass))
+            return true;
+        else
+            return false;
     }
 
     public void radioClickedGender(View view) {
