@@ -38,6 +38,8 @@ public class Login_Form extends AppCompatActivity {
                 boolean checkPass = myDB.checkPass(password);
                 if (checkPass == false) {
                     Toast.makeText(Login_Form.this, "Bienvenido", Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(Login_Form.this, Home.class);
+                    startActivity(i);
                 } else
                     Toast.makeText(Login_Form.this, "La Contraseña es INCORRECTA", Toast.LENGTH_LONG).show();
             }else

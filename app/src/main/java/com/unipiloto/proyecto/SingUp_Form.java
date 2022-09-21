@@ -45,12 +45,15 @@ public class SingUp_Form extends AppCompatActivity {
                 user.setGenero(valueGender);
                 user.setRol(valueRol);
 
-                boolean check = myDB.checkUser(editEmail.getText().toString());
-                if (check == false) {
+                String email = editEmail.getText().toString();
+                boolean check = myDB.checkUser(email);
+                if (check == true) {
                     boolean isInserted = myDB.insertData(user);
-                    if (isInserted)
+                    if (isInserted) {
                         Toast.makeText(SingUp_Form.this, "Datos Registrados con EXITO", Toast.LENGTH_LONG).show();
-                    else
+                        Intent i = new Intent(SingUp_Form.this, Home.class);
+                        startActivity(i);
+                    }else
                         Toast.makeText(SingUp_Form.this, "Datos NO registrados", Toast.LENGTH_LONG).show();
                 }else
                     Toast.makeText(SingUp_Form.this, "El Correo YA existe", Toast.LENGTH_LONG).show();

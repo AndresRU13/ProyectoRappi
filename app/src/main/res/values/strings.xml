@@ -11,4 +11,7 @@
     <string name="titulo2">Registrado</string>
     <string name="ok">OK</string>
     <string name="confirmacion">Confirma Contraseña</string>
+    <string name="tituloG">RAPPICOOP</string>
+    <string name="welcome">Bienvenido</string>
+    <string name="aProduct">Añadir Producto</string>
 </resources>
