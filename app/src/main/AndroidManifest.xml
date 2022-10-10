@@ -14,13 +14,19 @@
         android:theme="@style/Theme.Proyecto"
         tools:targetApi="31">
         <activity
-            android:name=".Home"
+            android:name=".Products_Form.AddProduct_Form"
             android:exported="false" />
         <activity
-            android:name=".SingUp_Form"
+            android:name=".Products_Form.DeleteProduct_Form"
             android:exported="false" />
         <activity
-            android:name=".Login_Form"
+            android:name=".Home.Home_Vendor"
+            android:exported="false" />
+        <activity
+            android:name=".User_Forms.SingUp_Form"
+            android:exported="false" />
+        <activity
+            android:name=".User_Forms.Login_Form"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

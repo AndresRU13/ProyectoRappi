@@ -1,21 +1,23 @@
-package com.unipiloto.proyecto;
+package com.unipiloto.proyecto.Objects;
 
 public class Usuario {
 
     private Integer id;
     private String nombre;
+    private String edad;
     private String email;
     private String password;
-    private Integer genero;
-    private Integer rol;
+    private String genero;
+    private String rol;
 
     public Usuario(){
 
     }
 
-    public Usuario(Integer id, String nombre, String email, String password, Integer genero, Integer rol) {
+    public Usuario(Integer id, String nombre, String edad, String email, String password, String genero, String rol) {
         this.id = id;
         this.nombre = nombre;
+        this.edad = edad;
         this.email = email;
         this.password = password;
         this.genero = genero;
@@ -38,6 +40,14 @@ public class Usuario {
         this.nombre = nombre;
     }
 
+    public String getEdad() {
+        return edad;
+    }
+
+    public void setEdad(String edad) {
+        this.edad = edad;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -54,19 +64,19 @@ public class Usuario {
         this.password = password;
     }
 
-    public Integer getGenero() {
+    public String getGenero() {
         return genero;
     }
 
-    public void setGenero(Integer genero) {
+    public void setGenero(String genero) {
         this.genero = genero;
     }
 
-    public Integer getRol() {
+    public String getRol() {
         return rol;
     }
 
-    public void setRol(Integer rol) {
+    public void setRol(String rol) {
         this.rol = rol;
     }
 }

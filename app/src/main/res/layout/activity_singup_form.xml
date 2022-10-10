@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="30dp"
-    tools:context=".SingUp_Form">
+    android:background="@drawable/fondo_4"
+    tools:context=".User_Forms.SingUp_Form">
 
     <TextView
         android:id="@+id/titulo"
@@ -15,7 +16,7 @@
         android:text="@string/titulo"
         android:textSize="30dp"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:layout_centerHorizontal="true"
         />
 
@@ -23,11 +24,25 @@
             android:id="@+id/editFullNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:ems="10"
             android:hint="@string/nombre"
             android:inputType="text"
+            android:textColorHint="@color/white"
+            android:backgroundTint="@color/white"
             />
+
+    <EditText
+        android:id="@+id/editAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="@string/edad"
+        android:inputType="number"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"
+        />
 
         <EditText
             android:id="@+id/editCorreo"
@@ -35,6 +50,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:hint="@string/correo"
+            android:textColorHint="@color/white"
+            android:backgroundTint="@color/white"
             />
 
         <EditText
@@ -44,6 +61,8 @@
             android:layout_marginTop="5dp"
             android:hint="@string/contraseña"
             android:inputType="textPassword"
+            android:textColorHint="@color/white"
+            android:backgroundTint="@color/white"
             />
 
 
@@ -54,6 +73,8 @@
             android:layout_marginTop="5dp"
             android:hint="@string/confirmacion"
             android:inputType="textPassword"
+            android:textColorHint="@color/white"
+            android:backgroundTint="@color/white"
             />
 
     <RadioGroup
@@ -69,6 +90,8 @@
             android:layout_height="wrap_content"
             android:text="Genero:"
             android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
             />
 
         <RadioButton
@@ -77,8 +100,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:text="Hombre"
+            android:textStyle="bold"
             android:textSize="15sp"
             android:onClick="radioClickedGender"
+            android:textColor="@color/white"
             />
 
         <RadioButton
@@ -87,8 +112,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:text="Mujer"
+            android:textStyle="bold"
             android:textSize="15sp"
             android:onClick="radioClickedGender"
+            android:textColor="@color/white"
             />
 
     </RadioGroup>
@@ -105,27 +132,45 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rol:"
+            android:textStyle="bold"
             android:textSize="15sp"
+            android:textColor="@color/white"
             />
 
         <RadioButton
             android:id="@+id/radioClient"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="8dp"
             android:text="Cliente"
+            android:textStyle="bold"
             android:textSize="15sp"
             android:onClick="radioClickedRol"
+            android:textColor="@color/white"
             />
 
         <RadioButton
             android:id="@+id/radioVendor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="5dp"
             android:text="Vendedor"
+            android:textStyle="bold"
             android:textSize="15sp"
             android:onClick="radioClickedRol"
+            android:textColor="@color/white"
+            />
+
+        <RadioButton
+            android:id="@+id/radioRepart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Repartidor"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:onClick="radioClickedRol"
+            android:textColor="@color/white"
             />
     </RadioGroup>
 
@@ -139,9 +184,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="20dp"
             android:text="@string/aceptar"
             android:onClick="Registrar"
+            android:backgroundTint="@color/purple_700"
             />
 
         <Button
@@ -149,9 +195,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="20dp"
             android:text="@string/cancelar"
             android:onClick="Regresar"
+            android:backgroundTint="@color/purple_700"
             />
     </RadioGroup>
 

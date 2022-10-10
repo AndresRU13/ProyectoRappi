@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="30dp"
-    tools:context=".Login_Form">
+    android:background="@drawable/fondo_4"
+    tools:context=".User_Forms.Login_Form">
 
     <TextView
         android:layout_width="wrap_content"
@@ -14,7 +15,7 @@
         android:text="@string/titulo_L"
         android:textSize="35dp"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:layout_centerHorizontal="true"
         />
 
@@ -27,6 +28,8 @@
         android:layout_marginTop="20dp"
         android:inputType="text"
         android:textSize="20sp"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"
         />
 
     <EditText
@@ -37,6 +40,8 @@
         android:ems="10"
         android:inputType="textPassword"
         android:textSize="20sp"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"
         />
 
     <Button
@@ -58,4 +63,15 @@
         android:layout_marginTop="10dp"
         android:onClick="Registrase"
         />
+
+    <Button
+        android:id="@+id/ver"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Ver Datos"
+        android:textSize="22sp"
+        android:layout_marginTop="10dp"
+        android:onClick="viewData"
+        />
+
 </LinearLayout>

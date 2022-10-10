@@ -14,4 +14,14 @@
     <string name="tituloG">RAPPICOOP</string>
     <string name="welcome">Bienvenido</string>
     <string name="aProduct">Añadir Producto</string>
+    <string name="Titulo_prod">AGREGAR PRODUCTO</string>
+    <string name="nombre_pro">Nombre del Producto</string>
+    <string name="desc_pro">Descripcion del Producto</string>
+    <string name="val_pro">Valor de Venta</string>
+    <string name="restaurante">Nombre del Local</string>
+    <string name="volver">Regresar</string>
+    <string name="dProduct">Eliminar Producto</string>
+    <string name="iDpro">Id del Producto que desea eliminar</string>
+    <string name="view">Mostrar</string>
+    <string name="edad">Edad</string>
 </resources>

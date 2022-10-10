@@ -3,9 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Proyecto/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1385" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Proyecto/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2105" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_addproduct_form.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_deleteproduct_form.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_home_client.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_home_vendor.xml" value="0.18" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_login_form.xml" value="0.25" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_product_form.xml" value="0.25" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Proyecto/app/src/main/res/layout/activity_singup_form.xml" value="0.25" />
       </map>
     </option>

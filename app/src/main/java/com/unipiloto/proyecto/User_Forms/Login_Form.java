@@ -1,20 +1,22 @@
-package com.unipiloto.proyecto;
+package com.unipiloto.proyecto.User_Forms;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.textfield.TextInputLayout;
+import com.unipiloto.proyecto.DataBase.DataBaseRC;
+import com.unipiloto.proyecto.Home.Home_Vendor;
+import com.unipiloto.proyecto.R;
 
 public class Login_Form extends AppCompatActivity {
 
-    DataBaseSingUp myDB;
+    DataBaseRC myDB;
     EditText editEmail, editPassword;
 
     @Override
@@ -22,7 +24,7 @@ public class Login_Form extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_form);
 
-        myDB = new DataBaseSingUp(this);
+        myDB = new DataBaseRC(this);
 
         editEmail = (EditText) findViewById(R.id.logCorreo);
         editPassword = (EditText) findViewById(R.id.logContraseña);
@@ -35,10 +37,11 @@ public class Login_Form extends AppCompatActivity {
         if (validar() == true) {
             boolean checkuser = myDB.checkUser(email);
             if (checkuser == false) {
-                boolean checkPass = myDB.checkPass(password);
-                if (checkPass == false) {
+                boolean checkpass = myDB.checkPass(password);
+                if (checkpass == false) {
+
                     Toast.makeText(Login_Form.this, "Bienvenido", Toast.LENGTH_LONG).show();
-                    Intent i = new Intent(Login_Form.this, Home.class);
+                    Intent i = new Intent(Login_Form.this, Home_Vendor.class);
                     startActivity(i);
                 } else
                     Toast.makeText(Login_Form.this, "La Contraseña es INCORRECTA", Toast.LENGTH_LONG).show();
@@ -61,5 +64,32 @@ public class Login_Form extends AppCompatActivity {
             return false;
         else
             return true;
+    }
+
+    public void viewData(View view) {
+        Cursor res = myDB.getAll();
+        if(res.getCount() == 0){
+            show("Error", "No encontrado");
+            return;
+        }
+
+        StringBuffer buf = new StringBuffer();
+        while(res.moveToNext()){
+            buf.append("ID -> " + res.getString(0) + "\n");
+            buf.append("Nombre -> " + res.getString(1) + "\n");
+            buf.append("Correo -> " + res.getString(2) + "\n");
+            buf.append("Contraseña -> " + res.getString(3) + "\n");
+            buf.append("Genero -> " + res.getString(4) + "\n");
+            buf.append("Rol -> " + res.getString(5) + "\n");
+        }
+        show("Data", buf.toString());
+    }
+
+    public void show(String title, String message){
+        AlertDialog.Builder build = new AlertDialog.Builder(this);
+        build.setCancelable(true);
+        build.setTitle(title);
+        build.setMessage(message);
+        build.show();
     }
 }
