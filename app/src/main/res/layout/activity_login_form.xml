@@ -28,6 +28,7 @@
         android:layout_marginTop="20dp"
         android:inputType="text"
         android:textSize="20sp"
+        android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:backgroundTint="@color/white"
         />
@@ -40,6 +41,7 @@
         android:ems="10"
         android:inputType="textPassword"
         android:textSize="20sp"
+        android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:backgroundTint="@color/white"
         />

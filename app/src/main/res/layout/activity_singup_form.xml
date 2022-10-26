@@ -28,6 +28,7 @@
             android:ems="10"
             android:hint="@string/nombre"
             android:inputType="text"
+            android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:backgroundTint="@color/white"
             />
@@ -40,6 +41,7 @@
         android:ems="10"
         android:hint="@string/edad"
         android:inputType="number"
+        android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:backgroundTint="@color/white"
         />
@@ -50,6 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:hint="@string/correo"
+            android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:backgroundTint="@color/white"
             />
@@ -61,6 +64,7 @@
             android:layout_marginTop="5dp"
             android:hint="@string/contraseña"
             android:inputType="textPassword"
+            android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:backgroundTint="@color/white"
             />
@@ -73,6 +77,7 @@
             android:layout_marginTop="5dp"
             android:hint="@string/confirmacion"
             android:inputType="textPassword"
+            android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:backgroundTint="@color/white"
             />

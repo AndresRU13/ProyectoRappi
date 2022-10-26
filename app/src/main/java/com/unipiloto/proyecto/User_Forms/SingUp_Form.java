@@ -50,38 +50,38 @@ public class SingUp_Form extends AppCompatActivity {
                 String gender = "Hombre";
                 String rol = "Cliente";
 
-                if (valueGender == 0){
+                if (valueGender == 0) {
                     gender = "mujer";
                 }
-                if (valueRol == 0){
+                if (valueRol == 0) {
                     rol = "Vendedor";
-                }else if (valueRol == 2){
+                } else if (valueRol == 2) {
                     rol = "Repartidor";
                 }
 
                 user.setGenero(gender);
                 user.setRol(rol);
 
-                if (rol == "Cliente") {
-                    String email = editEmail.getText().toString();
-                    boolean check = myDB.checkUser(email);
-                    if (check == true) {
-                        boolean isInserted = myDB.insertData(user);
-                        if (isInserted) {
-                            Toast.makeText(SingUp_Form.this, "Datos Registrados con EXITO", Toast.LENGTH_LONG).show();
-                            Intent i = new Intent(SingUp_Form.this, Home_Vendor.class);
-                            startActivity(i);
+                    if (validarE() == true) {
+                        String email = editEmail.getText().toString();
+                        boolean check = myDB.checkUser(email);
+                        if (check == true) {
+                            boolean isInserted = myDB.insertData(user);
+                            if (isInserted) {
+                                Toast.makeText(SingUp_Form.this, "Datos Registrados con EXITO", Toast.LENGTH_LONG).show();
+                                Intent i = new Intent(SingUp_Form.this, Home_Vendor.class);
+                                startActivity(i);
+                            } else
+                                Toast.makeText(SingUp_Form.this, "Datos NO registrados", Toast.LENGTH_LONG).show();
                         } else
-                            Toast.makeText(SingUp_Form.this, "Datos NO registrados", Toast.LENGTH_LONG).show();
-                    } else
-                        Toast.makeText(SingUp_Form.this, "El Correo YA existe", Toast.LENGTH_LONG).show();
-                } else if (validarE() == false && rol == "Vendedor" || rol == "Repartidor")
-                    Toast.makeText(SingUp_Form.this, "NO eres mayor de edad", Toast.LENGTH_LONG).show();
-            }else
-                Toast.makeText(SingUp_Form.this, "Los campos de la CONTRASEÑA NO coinciden", Toast.LENGTH_LONG).show();
-        }else{
-            Toast.makeText(SingUp_Form.this, "Faltan completar alguno campos", Toast.LENGTH_LONG).show();
-        }
+                            Toast.makeText(SingUp_Form.this, "El Correo YA existe", Toast.LENGTH_LONG).show();
+                    } else if (validarE() == false && rol == "Vendedor" || rol == "Repartidor")
+                        Toast.makeText(SingUp_Form.this, "NO eres mayor de edad", Toast.LENGTH_LONG).show();
+                } else
+                    Toast.makeText(SingUp_Form.this, "Los campos de la CONTRASEÑA NO coinciden", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(SingUp_Form.this, "Faltan completar alguno campos", Toast.LENGTH_LONG).show();
+            }
     }
 
     public void Regresar(View view) {
